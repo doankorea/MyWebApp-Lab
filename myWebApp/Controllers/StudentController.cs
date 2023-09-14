@@ -48,6 +48,7 @@ namespace myWebApp.Controllers
             };
             return View();
         }
+        //httppost
         [HttpPost("Student/Add")]
         public IActionResult Create(Student s)
         {
