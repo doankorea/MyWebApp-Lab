@@ -48,7 +48,7 @@ namespace myWebApp.Controllers
             };
             return View();
         }
-        [HttpPost]
+        [HttpPost("Student/Add")]
         public IActionResult Create(Student s)
         {
             s.Id = listStudents.Last<Student>().Id + 1;
