@@ -56,6 +56,7 @@ namespace myWebApp.Controllers
             listStudents.Add(s);
             return View("Index", listStudents);
         }
+        //Route
         [Route("Student/List")]
         public IActionResult Index()
         {

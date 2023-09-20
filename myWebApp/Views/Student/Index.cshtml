@@ -1,4 +1,9 @@
-﻿@model IEnumerable<Student>
+﻿@{
+    ViewData["Title"] = "Student/List";
+    Layout = "~/Views/Shared/MyLayoutHelper.cshtml";
+}
+
+@model IEnumerable<Student>
 <a asp-action="Create" asp-controller="Student" class="btn btn-primary">Create Student</a>
 <a href="Add" class="btn btn-primary">Create Student</a>
 <table class="table table-striped">
@@ -51,3 +56,11 @@
         }
     </tbody>
 </table>
+@section Scripts{
+    <script>
+        var table = document.querySelector("table");
+        table.onclick = function onTableClick() {
+            table.style = "background-color: yellow;"
+        }
+    </script>
+}
