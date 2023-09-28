@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using myWebApp.Models;
+using System.Reflection;
 
 namespace myWebApp.Controllers
 {
@@ -50,12 +51,27 @@ namespace myWebApp.Controllers
         }
         //httppost
         [HttpPost("Student/Add")]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(Student s)
         {
-            s.Id = listStudents.Last<Student>().Id + 1;
-            listStudents.Add(s);
-            return View("Index", listStudents);
+            if (ModelState.IsValid)
+            {
+                s.Id = listStudents.Last<Student>().Id + 1;
+                listStudents.Add(s);
+                return View("Index", listStudents);
+            }
+            ViewBag.AllGenders = Enum.GetValues(typeof(Gender)).Cast<Gender>().ToList();
+            ViewBag.AllBranches = new List<SelectListItem>()
+            {
+                new SelectListItem { Text = "IT", Value = "1" },
+                new SelectListItem { Text = "BE", Value = "2" },
+                new SelectListItem { Text = "CE", Value = "3" },
+                new SelectListItem { Text = "EE", Value = "4" }
+            };
+            return View();
+
         }
+
         //Route
         [Route("Student/List")]
         public IActionResult Index()
@@ -63,5 +79,8 @@ namespace myWebApp.Controllers
             //Trả về View Index.cshtml cùng Model là danh sách sv listStudents
             return View(listStudents);
         }
+
+
+
     }
 }
