@@ -44,15 +44,14 @@ namespace myWebApp.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
 
         [Display(Name = "Ngày sinh")]
-        
-        public DateTime DateOfBorth { get; set; }//Ngày sinh    
-
+            
+        public DateTime? DateOfBorth { get; set; }//Ngày sinh    
+        [DataType(DataType.Currency, ErrorMessage ="Vui lòng nhập số thực")]
         [Required(ErrorMessage ="Vui lòng nhập điểm")]
-        [Range(0.0,10.0)]
-        [RegularExpression(@"^-?\d+(\.\d+)?$", ErrorMessage = "Điểm chỉ được chứa một chữ số sau dấu chấm")]
+        [Range(0.0,10.0, ErrorMessage = "Điểm chỉ được chứa một chữ số sau dấu chấm")]
         [Display(Name= "Điểm")]
         public float? Diem { get; set; }
-
+        
        
     }
 }
