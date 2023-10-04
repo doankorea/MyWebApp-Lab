@@ -8,50 +8,54 @@ namespace myWebApp.Models
 
     public class Student
     {
-        [Display(Name = "Mã sinh viên")]
-        public int Id { get; set; }//Mã sinh viên
-        [Required(ErrorMessage = "Họ Tên bắt buộc phải được nhập")]
-        [Display(Name = "Họ tên")]
-        [Range(4, 100, ErrorMessage = "Tên phải có ít nhất 4 ký tự và tối đa 100 ký tự.")]
-        public string? Name { get; set; } //Họ tên
-        [Required(ErrorMessage = "Email bắt buộc phải được nhập")]
-        [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}gmail.com", ErrorMessage = "Email không hợp lệ")]
-        [Display(Name = "Email")]
-        public string? Email { get; set; } //Email
-        [Required(ErrorMessage = "Mật khẩu bắt buộc phải được nhập")]
-        [Display(Name = "Mật khẩu")]
-        [RegularExpression("^(?=.{12,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@!%*?&,#]).+$", ErrorMessage = "Mật khẩu không hợp lệ")]
 
+        public int Id { get; set; }
+
+
+        [Required(ErrorMessage = "Họ tên phải tối thiểu 4 ký tự, tối đa 100 ký tự")]
+        [RegularExpression("^[A-Za-z\\s]{4,100}$", ErrorMessage = "Họ tên phải tối thiểu 4 ký tự, tối đa 100 ký tự")]
+        [Display(Name = "Họ tên")]
+        public string? Name { get; set; } //Họ tên
+
+        [Required(ErrorMessage = "Email bắt buộc phải được nhập")]
+        [RegularExpression(@"\b[A-Za-z0-9._%+-]+@gmail\.com\b", ErrorMessage = "Địa chỉ email phải có đuôi gmail.com")]
+        [Display(Name = "Nhập email")]
+        public string? Email { get; set; } //Email
+
+        [StringLength(100, MinimumLength = 8, ErrorMessage = "Mật khẩu phải có ít nhất 8 ký tự")]
+        [RegularExpression("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[!@#$%^&*()_+]).{8,}$", ErrorMessage = "Mật khẩu từ 8 ký tự trở lên, có ký tự viết hoa, viết thường, chữ số và ký tự đặc biệt")]
         public string? Password { get; set; }//Mật khẩu
-        [Required(ErrorMessage = "Ngành học bắt buộc phải được nhập")]
-        [Display(Name = "Ngành học")]
-        
+
+        [Display(Name = "Ngành")]
+        [Required(ErrorMessage = "Nganh bắt buộc phải được nhập")]
         public Branch? Branch { get; set; }//Ngành học
 
+        [Required(ErrorMessage = "Giới tính bắt buộc phải được nhập")]
         [Display(Name = "Giới tính")]
+
         public Gender? Gender { get; set; }//Giới tính
-                                           
+
         [Required(ErrorMessage = "Hệ bắt buộc phải được nhập")]
-        [Display(Name = "Hệ: true-chính quy, false-phi chính quy")]
-        public bool IsRegular { get; set; }//Hệ: true-chính quy, false-phi chính quy
+        [Display(Name = "Hệ")]
+        public bool IsRegular { get; set; }//Hệ: true-chính qui, false-phi cq
+
         [DataType(DataType.MultilineText)]
-        [Required]
+        [Required(ErrorMessage = "Địa chỉ bắt buộc phải được nhập")]
         [Display(Name = "Địa chỉ")]
         public string? Address { get; set; }//Địa chỉ
-        [Required(ErrorMessage = "Yêu cầu nhập ngày")]
-        [Range(typeof(DateTime), "1/1/1963", "12/31/2005", ErrorMessage = "Ngày không hợp lệ")]
-        [DataType(DataType.Date, ErrorMessage = "Vui lòng nhập một ngày hợp lệ.")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
 
-        [Display(Name = "Ngày sinh")]
-            
-        public DateTime? DateOfBorth { get; set; }//Ngày sinh    
-        [DataType(DataType.Currency, ErrorMessage ="Vui lòng nhập số thực")]
-        [Required(ErrorMessage ="Vui lòng nhập điểm")]
-        [Range(0.0,10.0, ErrorMessage = "Điểm chỉ được chứa một chữ số sau dấu chấm")]
-        [Display(Name= "Điểm")]
-        public float? Diem { get; set; }
+        [Required(ErrorMessage = "Ngày sinh không hợp lệ")]
+        [Range(typeof(DateTime), "1/1/1963", "12/31/2005")]
+        [DataType(DataType.Date)]
+        public DateTime? DateOfBorth { get; set; }//Ngày sinh
+
+
+        [Required(ErrorMessage = "Nhập điểm từ 0 đến 10")]
+        [RegularExpression("^(10(\\.0{1,2})?|[0-9](\\.\\d{1,2})?)$", ErrorMessage = "kiểu số thực và miền giá trị từ 0.0 đến 10.0")]
+        public string? Score { get; set; }
+        /*  [Required(ErrorMessage = "Ảnh bắt buộc phải được nhập")]*/
         
-       
+
+
     }
 }
