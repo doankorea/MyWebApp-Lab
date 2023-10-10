@@ -53,9 +53,8 @@ namespace myWebApp.Models
         [Required(ErrorMessage = "Nhập điểm từ 0 đến 10")]
         [RegularExpression("^(10(\\.0{1,2})?|[0-9](\\.\\d{1,2})?)$", ErrorMessage = "kiểu số thực và miền giá trị từ 0.0 đến 10.0")]
         public string? Score { get; set; }
-        /*  [Required(ErrorMessage = "Ảnh bắt buộc phải được nhập")]*/
         
 
-
+        
     }
 }

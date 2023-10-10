@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VfqjNC+sKP59u+f4jNDf2LVZ1m1Y3zWSjx0QkPsPd5j50A+q/xZYFNBGtE60vN9OTluhuzbBn7GC+a5W01L19A==",
+  "dgSpecHash": "kt14uZ/JM4+uh9P6t+WrTWBNnkYmdNa68r694r+UHuOMso2r7OWqiFMNqEmCaG0eZFdVYSWBkGQ+cZM2YqjyEw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tddnh\\OneDrive\\Máy tính\\MyWebApp-ThucHanh1\\myWebApp\\myWebApp.csproj",
+  "projectFilePath": "D:\\ASP.NET mvc\\MyWebApp-ThucHanh1\\myWebApp\\myWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tddnh\\.nuget\\packages\\awssdk\\2.3.55.2\\awssdk.2.3.55.2.nupkg.sha512",
     "C:\\Users\\tddnh\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

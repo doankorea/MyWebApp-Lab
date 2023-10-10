@@ -5,10 +5,11 @@ namespace myWebApp.Models.Data
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new SchoolContext(serviceProvider.GetRequiredService<DbContextOptions<SchoolContext>>()))
+            using (var context = new SchoolContext(serviceProvider
+            .GetRequiredService<DbContextOptions<SchoolContext>>()))
             {
                 context.Database.EnsureCreated();
-                if (context.Learners.Any())
+                if (context.Majors.Any())
                 {
                     return;
                 }

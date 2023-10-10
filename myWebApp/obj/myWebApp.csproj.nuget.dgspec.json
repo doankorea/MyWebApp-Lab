@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tddnh\\OneDrive\\Máy tính\\MyWebApp-ThucHanh1\\myWebApp\\myWebApp.csproj": {}
+    "D:\\ASP.NET mvc\\MyWebApp-ThucHanh1\\myWebApp\\myWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tddnh\\OneDrive\\Máy tính\\MyWebApp-ThucHanh1\\myWebApp\\myWebApp.csproj": {
+    "D:\\ASP.NET mvc\\MyWebApp-ThucHanh1\\myWebApp\\myWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tddnh\\OneDrive\\Máy tính\\MyWebApp-ThucHanh1\\myWebApp\\myWebApp.csproj",
+        "projectUniqueName": "D:\\ASP.NET mvc\\MyWebApp-ThucHanh1\\myWebApp\\myWebApp.csproj",
         "projectName": "myWebApp",
-        "projectPath": "C:\\Users\\tddnh\\OneDrive\\Máy tính\\MyWebApp-ThucHanh1\\myWebApp\\myWebApp.csproj",
+        "projectPath": "D:\\ASP.NET mvc\\MyWebApp-ThucHanh1\\myWebApp\\myWebApp.csproj",
         "packagesPath": "C:\\Users\\tddnh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tddnh\\OneDrive\\Máy tính\\MyWebApp-ThucHanh1\\myWebApp\\obj\\",
+        "outputPath": "D:\\ASP.NET mvc\\MyWebApp-ThucHanh1\\myWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tddnh\\AppData\\Roaming\\NuGet\\NuGet.Config",
