@@ -1,6 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/MyLayout.cshtml";
+    Layout = "~/Views/Shared/MyLayoutHelper.cshtml";
 }
 @model IEnumerable<Learner>
 <div class="ms-2 mx-2">
@@ -27,7 +27,8 @@
                 <td>@s.LastName</td>
                 <td>@s.Major.MajorName</td>
                 <td>@s.EnrollmentDate</td>
-                <td><a asp-action="Edit" asp-route-id="@s.LearnerID">Edit</a>|<a asp-action="Delete" asp-route-id= "@s.LearnerID">Delete</a></td>
+                <td><a asp-action="Edit" asp-route-id="@s.LearnerID">Edit</a>
+                    |<a asp-action="Delete" asp-route-id= "@s.LearnerID">Delete</a></td>
             </tr>
         }
     </tbody>
@@ -36,7 +37,7 @@
 <a asp-action="Create" class="btn btn-primary">Create New Student</a>
 </div>
 @section Scripts{
-    <script>
+    <script>                                    
         $("li").click(function (e) {
              var id = $(this).attr("id");
             //alert(id);

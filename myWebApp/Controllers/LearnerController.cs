@@ -20,39 +20,40 @@ namespace myWebApp.Controllers
         {
             if(mid == null)
             {
-                var learners = db.Learners.Include(m => m.Major).ToList();
-                return View(learners);
+                var learner = db.Learners
+                    .Include(m => m.Major).ToList();
+                return View(learner);
 
             }
             else
             {
-                var learners= db.Learners.Where(l=> l.MajorID== mid).Include(m=> m.Major).ToList(); 
-                return View(learners);
+                var learner= db.Learners.Where(l=> l.MajorID== mid).Include(m=> m.Major).ToList(); 
+                return View(learner);
 
             }
         }
         public IActionResult LearnerByMajorID(int mid)
         { 
-        var learners = db.Learners
+        var learner = db.Learners
          .Where(l=>l.MajorID == mid)
          .Include(m=>m.Major).ToList();
-         return PartialView("LearnerTable", learners);
+         return PartialView("LearnerTable", learner);
             
         }
         public IActionResult Create()
         {
             //dùng 1 trong 2 cách để tạo SelectList gửi về View qua ViewBag để
             //hiển thị danh sách chuyên ngành (Majors)
-            var majors = new List<SelectListItem>(); //cách 1
-            foreach (var item in db.Majors)
-            {
-                majors.Add(new SelectListItem
-                {
-                    Text = item.MajorName,
-                    Value = item.MajorID.ToString()
-                });
-            }
-            ViewBag.LearnerID = majors;
+            //var majors = new List<SelectListItem>(); //cách 1
+            //foreach (var item in db.Majors)
+            //{
+            //    majors.Add(new SelectListItem
+            //    {
+            //        Text = item.MajorName,
+            //        Value = item.MajorID.ToString()
+            //    });
+            //}
+            //ViewBag.LearnerID = majors;
             ViewBag.MajorID = new SelectList(db.Majors, "MajorID", "MajorName"); //cách 2
             return View();
         }
@@ -93,9 +94,9 @@ Learner learner)
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("LearnerID,FirstMidName,LastName,MajorID,EnrollmentDate")] Learner learners)
+        public IActionResult Edit(int id, [Bind("LearnerID,FirstMidName,LastName,MajorID,EnrollmentDate")] Learner learner)
         {
-            if (id != learners.LearnerID)
+            if (id != learner.LearnerID)
             {
                 return NotFound();
             }
@@ -104,12 +105,12 @@ Learner learner)
             {
                 try
                 {
-                    db.Update(learners);
+                    db.Update(learner);
                     db.SaveChanges();
                 }
                 catch(DbUpdateConcurrencyException)
                 {
-                    if (!LearnerExists(learners.LearnerID))
+                    if (!LearnerExists(learner.LearnerID))
                     {
                         return NotFound();
                     }
@@ -122,8 +123,8 @@ Learner learner)
             }
 
             // Tạo SelectList để hiển thị danh sách Majors
-            ViewBag.MajorID = new SelectList(db.Majors, "MajorID", "MajorName", learners.MajorID);
-            return View(learners);  
+            ViewBag.MajorID = new SelectList(db.Majors, "MajorID", "MajorName", learner.MajorID);
+            return View(learner);  
         }
         private bool LearnerExists(int id)
         {
@@ -171,6 +172,7 @@ Learner learner)
             db.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
+
     }
 
 
