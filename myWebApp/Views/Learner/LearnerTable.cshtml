@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<Learner>
- <table class="table table-striped">
+
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Mã</th>
@@ -11,19 +12,32 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var s in Model)
-         {
+        @foreach (var learner in Model)
+        {
             <tr>
-                <td>@s.LearnerID</td>
-                <td>@s.FirstMidName</td>
-                <td>@s.LastName</td>
-                <td>@s.Major.MajorName</td>
-                <td>@s.EnrollmentDate</td>
+                <td>@learner.LearnerID</td>
+                <td>@learner.FirstMidName</td>
+                <td>@learner.LastName</td>
+                <td>@learner.Major.MajorName</td>
+                <td>@learner.EnrollmentDate</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@s.LearnerID">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@s.LearnerID">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@learner.LearnerID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@learner.LearnerID">Delete</a>
                 </td>
             </tr>
-         }
+        }
     </tbody>
 </table>
+
+<ul class="pagination">
+    @for (int i = 1; i <= ViewBag.pageNum; i++)
+    {
+        <li class="page-item" page="@i"
+        @ViewBag.mid !=null ? "mid='ViewBag.mid'" : "" )
+        @ViewBag.keyword !=null ? "keyword='@ViewBag.keyword'" : "" )>
+
+
+            <a class="page-link">@i</a>
+        </li>
+    }
+</ul>

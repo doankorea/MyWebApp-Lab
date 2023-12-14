@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "a8jgz3PF/Lal0Q/meWbwdOG6Vo9Z/lSoQWgyQAoswJA=",
+  "Hash": "820IHBjx+kOlMHxByQOO5A3rPidGUtJf2nznhbvAmuM=",
   "Source": "myWebApp",
   "BasePath": "_content/myWebApp",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\ASP.NET mvc\\MyWebApp-ThucHanh1\\myWebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\myWebApp.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\ASP.NET mvc\\MyWebApp-ThucHanh1\\myWebApp\\wwwroot\\css\\PagedList.css",
+      "SourceId": "myWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ASP.NET mvc\\MyWebApp-ThucHanh1\\myWebApp\\wwwroot\\",
+      "BasePath": "_content/myWebApp",
+      "RelativePath": "css/PagedList.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\PagedList.css"
     },
     {
       "Identity": "D:\\ASP.NET mvc\\MyWebApp-ThucHanh1\\myWebApp\\wwwroot\\css\\site.css",

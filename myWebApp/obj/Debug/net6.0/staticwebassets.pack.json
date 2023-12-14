@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\myWebApp.bundle.scp.css"
     },
     {
+      "Id": "D:\\ASP.NET mvc\\MyWebApp-ThucHanh1\\myWebApp\\wwwroot\\css\\PagedList.css",
+      "PackagePath": "staticwebassets\\css\\PagedList.css"
+    },
+    {
       "Id": "D:\\ASP.NET mvc\\MyWebApp-ThucHanh1\\myWebApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

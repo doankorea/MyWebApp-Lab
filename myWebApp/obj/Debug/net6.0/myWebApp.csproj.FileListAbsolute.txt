@@ -532,3 +532,4 @@ D:\ASP.NET mvc\MyWebApp-ThucHanh1\myWebApp\obj\Debug\net6.0\refint\myWebApp.dll
 D:\ASP.NET mvc\MyWebApp-ThucHanh1\myWebApp\obj\Debug\net6.0\myWebApp.pdb
 D:\ASP.NET mvc\MyWebApp-ThucHanh1\myWebApp\obj\Debug\net6.0\myWebApp.genruntimeconfig.cache
 D:\ASP.NET mvc\MyWebApp-ThucHanh1\myWebApp\obj\Debug\net6.0\ref\myWebApp.dll
+D:\ASP.NET mvc\MyWebApp-ThucHanh1\myWebApp\obj\Debug\net6.0\scopedcss\Views\Home\Shared\_Layout.cshtml.rz.scp.css
